@@ -32,11 +32,11 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "_BB")
 	FOnPlayerHurt OnPlayerHurt;
 	
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBossDied)
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBossDied);
 	UPROPERTY(BlueprintAssignable, Category = "_BB")
 	FOnBossDied OnBossDied;
 	
-	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayerDied)
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayerDied);
 	UPROPERTY(BlueprintAssignable, Category = "_BB")
 	FOnPlayerDied OnPlayerDied;
 	

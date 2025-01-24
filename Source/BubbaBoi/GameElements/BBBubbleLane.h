@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/SplineMeshComponent.h"
+#include "Components/SplineComponent.h"
 #include "GameFramework/Actor.h"
 #include "BBBubbleLane.generated.h"
 
@@ -24,5 +24,5 @@ protected:
 
 public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
-	USplineMeshComponent* SplineMesh;
+	USplineComponent* Spline;
 };

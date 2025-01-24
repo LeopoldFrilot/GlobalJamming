@@ -6,8 +6,10 @@
 ABBBubbleLane::ABBBubbleLane()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	
-	SplineMesh = CreateDefaultSubobject<USplineMeshComponent>(TEXT("SplineMesh"));
+
+	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+	Spline = CreateDefaultSubobject<USplineComponent>(TEXT("SplineMesh"));
+	Spline->SetupAttachment(RootComponent);
 }
 
 void ABBBubbleLane::BeginPlay()
@@ -24,4 +26,3 @@ void ABBBubbleLane::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
-
