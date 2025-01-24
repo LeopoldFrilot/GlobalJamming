@@ -17,18 +17,18 @@ public:
 	ABBBubbleLane();
 	virtual void Tick(float DeltaTime) override;
 	
-	UFUNCTION(BlueprintCallable, Category = "_BB")
+	UFUNCTION(BlueprintCallable, Category = "+BB")
 	void SpawnBubble(TSubclassOf<ABubble> BubbleClass);
 
 protected:
 	virtual void BeginPlay() override;
 
 public:
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "_BB")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "+BB")
 	USplineComponent* Spline;
 
 private:
-	UPROPERTY(EditAnywhere, Category = "_BB")
+	UPROPERTY(EditAnywhere, Category = "+BB")
 	float TimeToEnd = 10.f;
 	
 	TMap<TObjectPtr<ABubble>, float> BubbleTimers;

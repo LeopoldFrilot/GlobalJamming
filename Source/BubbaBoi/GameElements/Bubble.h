@@ -16,7 +16,7 @@ public:
 	ABubble();
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "_BB")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "+BB")
 	void PopBubble();
 
 protected:

@@ -14,36 +14,36 @@ class BUBBABOI_API ABBGameMode : public AGameModeBase
 public:
 	virtual void BeginPlay() override;
 
-	UFUNCTION(BlueprintCallable, Category = "_BB")
+	UFUNCTION(BlueprintCallable, Category = "+BB")
 	void StartGame();
 
-	UFUNCTION(BlueprintCallable, Category = "_BB")
+	UFUNCTION(BlueprintCallable, Category = "+BB")
 	void DealDamageToPlayer(int Damage);
 	
-	UFUNCTION(BlueprintCallable, Category = "_BB")
+	UFUNCTION(BlueprintCallable, Category = "+BB")
 	void DealDamageToBoss(int Damage);
 
 public:
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnBossHurt, int32, Previous, int32, New);
-	UPROPERTY(BlueprintAssignable, Category = "_BB")
+	UPROPERTY(BlueprintAssignable, Category = "+BB")
 	FOnBossHurt OnBossHurt;
 	
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnPlayerHurt, int32, Previous, int32, New);
-	UPROPERTY(BlueprintAssignable, Category = "_BB")
+	UPROPERTY(BlueprintAssignable, Category = "+BB")
 	FOnPlayerHurt OnPlayerHurt;
 	
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnBossDied);
-	UPROPERTY(BlueprintAssignable, Category = "_BB")
+	UPROPERTY(BlueprintAssignable, Category = "+BB")
 	FOnBossDied OnBossDied;
 	
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPlayerDied);
-	UPROPERTY(BlueprintAssignable, Category = "_BB")
+	UPROPERTY(BlueprintAssignable, Category = "+BB")
 	FOnPlayerDied OnPlayerDied;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "_BB")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "+BB")
 	int DefaultBossHealth = 1000;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "_BB")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "+BB")
 	int DefaultPlayerHealth = 5;
 
 private:

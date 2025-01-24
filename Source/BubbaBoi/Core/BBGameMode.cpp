@@ -16,7 +16,7 @@ void ABBGameMode::StartGame()
 
 void ABBGameMode::DealDamageToPlayer(int Damage)
 {
-	if (CurrentPlayerHealth > 0)
+	if (CurrentPlayerHealth <= 0)
 	{
 		return;
 	}
@@ -32,7 +32,7 @@ void ABBGameMode::DealDamageToPlayer(int Damage)
 
 void ABBGameMode::DealDamageToBoss(int Damage)
 {
-	if (CurrentBossHealth > 0)
+	if (CurrentBossHealth <= 0)
 	{
 		return;
 	}

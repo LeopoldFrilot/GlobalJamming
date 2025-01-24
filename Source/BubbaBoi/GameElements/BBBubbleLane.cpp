@@ -25,7 +25,7 @@ void ABBBubbleLane::Tick(float DeltaTime)
 	{
 		if (!IsValid(Timer.Key))
 		{
-			BubbleTimers.Remove(Timer.Key);
+			//BubbleTimers.Remove(Timer.Key);
 			continue;
 		}
 
