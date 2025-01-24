@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Bubble.h"
 #include "Components/SplineComponent.h"
 #include "GameFramework/Actor.h"
 #include "BBBubbleLane.generated.h"
@@ -16,13 +17,19 @@ public:
 	ABBBubbleLane();
 	virtual void Tick(float DeltaTime) override;
 	
-	UFUNCTION(BlueprintCallable)
-	void SpawnItem(AActor* ActorToSpawn);
+	UFUNCTION(BlueprintCallable, Category = "_BB")
+	void SpawnBubble(TSubclassOf<ABubble> BubbleClass);
 
 protected:
 	virtual void BeginPlay() override;
 
 public:
-	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "_BB")
 	USplineComponent* Spline;
+
+private:
+	UPROPERTY(EditAnywhere, Category = "_BB")
+	float TimeToEnd = 10.f;
+	
+	TMap<TObjectPtr<ABubble>, float> BubbleTimers;
 };
