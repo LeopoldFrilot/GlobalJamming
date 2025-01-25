@@ -14,7 +14,7 @@ class BUBBABOI_API ABBGameMode : public AGameModeBase
 public:
 	virtual void BeginPlay() override;
 
-	UFUNCTION(BlueprintCallable, Category = "+BB")
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "+BB")
 	void StartGame();
 
 	UFUNCTION(BlueprintCallable, Category = "+BB")
