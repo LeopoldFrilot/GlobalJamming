@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
 #include "BBBoss.generated.h"
 
 UCLASS()
-class BUBBABOI_API ABBBoss : public AActor
+class BUBBABOI_API ABBBoss : public ACharacter
 {
 	GENERATED_BODY()
 

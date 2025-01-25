@@ -36,4 +36,7 @@ private:
 
 	UPROPERTY()
 	TMap<ABubble*, float> BubbleTimers;
+
+	UPROPERTY()
+	TArray<ABubble*> BubblesToRemove;
 };

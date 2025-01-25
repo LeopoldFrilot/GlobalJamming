@@ -21,6 +21,15 @@ void ABBBubbleLane::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	for (auto Bubble : BubblesToRemove)
+	{
+		if (BubbleTimers.Contains(Bubble))
+		{
+			BubbleTimers.Remove(Bubble);
+		}
+	}
+	BubblesToRemove.Empty();
+
 	for (TTuple<ABubble*, float>& Timer : BubbleTimers)
 	{
 		if (!IsValid(Timer.Key))
@@ -48,8 +57,5 @@ void ABBBubbleLane::SpawnBubble(TSubclassOf<ABubble> BubbleClass)
 
 void ABBBubbleLane::RemoveBubble(ABubble* BubbleToRemove)
 {
-	if (BubbleTimers.Contains(BubbleToRemove))
-	{
-		BubbleTimers.Remove(BubbleToRemove);
-	}
+	BubblesToRemove.Add(BubbleToRemove);
 }
