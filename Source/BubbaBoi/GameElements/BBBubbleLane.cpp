@@ -21,7 +21,7 @@ void ABBBubbleLane::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	for (TTuple<TObjectPtr<ABubble>, float>& Timer : BubbleTimers)
+	for (TTuple<ABubble*, float>& Timer : BubbleTimers)
 	{
 		if (!IsValid(Timer.Key))
 		{
@@ -44,4 +44,12 @@ void ABBBubbleLane::SpawnBubble(TSubclassOf<ABubble> BubbleClass)
 	ABubble* Bubble = Cast<ABubble>(GetWorld()->SpawnActor(BubbleClass, &GetActorTransform(), SpawnInfo));
 	BubbleTimers.FindOrAdd(Bubble);
 	BubbleTimers[Bubble] = 0;
+}
+
+void ABBBubbleLane::RemoveBubble(ABubble* BubbleToRemove)
+{
+	if (BubbleTimers.Contains(BubbleToRemove))
+	{
+		BubbleTimers.Remove(BubbleToRemove);
+	}
 }

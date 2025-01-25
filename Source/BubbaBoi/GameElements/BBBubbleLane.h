@@ -19,6 +19,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable, Category = "+BB")
 	void SpawnBubble(TSubclassOf<ABubble> BubbleClass);
+	
+	UFUNCTION(BlueprintCallable, Category = "+BB")
+	void RemoveBubble(ABubble* BubbleToRemove);
 
 protected:
 	virtual void BeginPlay() override;
@@ -30,6 +33,7 @@ public:
 private:
 	UPROPERTY(EditAnywhere, Category = "+BB")
 	float TimeToEnd = 10.f;
-	
-	TMap<TObjectPtr<ABubble>, float> BubbleTimers;
+
+	UPROPERTY()
+	TMap<ABubble*, float> BubbleTimers;
 };
