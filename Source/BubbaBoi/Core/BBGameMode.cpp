@@ -8,7 +8,7 @@ void ABBGameMode::BeginPlay()
 	Super::BeginPlay();
 }
 
-void ABBGameMode::StartGame()
+void ABBGameMode::StartGame_Implementation()
 {
 	CurrentBossHealth = DefaultBossHealth;
 	CurrentPlayerHealth = DefaultPlayerHealth;
