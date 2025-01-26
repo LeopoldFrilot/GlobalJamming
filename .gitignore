@@ -72,3 +72,6 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Builds/Windows/BubbaBoi/Content/Paks/BubbaBoi-Windows.utoc
+Binaries/Win64/BubbaBoi-Win64-Shipping.pdb
+Builds/Windows/BubbaBoi/Content/Paks/BubbaBoi-Windows.ucas
